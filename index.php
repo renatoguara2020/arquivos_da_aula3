@@ -2,9 +2,10 @@
 
 if(isset($_POST['btn-enviar']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
-if(!empty($_POST['usuario']) && !empty($_POST['senha'])) {
+if(!empty($_POST['usuario']) && !empty($_POST['senha']) && !empty($_POST['email'])) {
     $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_SPECIAL_CHARS);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
     $dsn = 'mysql:host=localhost;dbname=php_com_pdo';
     $user = 'root';
@@ -55,6 +56,8 @@ if(!empty($_POST['usuario']) && !empty($_POST['senha'])) {
         <input type="text" placeholder="usuário" name="usuario" />
         <br />
         <input type="password" placeholder="senha" name="senha" />
+        <br />
+        <input type="email" placeholder="Digite seu e-mail" name=" email" />
         <br />
         <button type="submit" name="btn-enviar">Entrar</button>
     </form>
