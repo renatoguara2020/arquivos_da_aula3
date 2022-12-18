@@ -35,7 +35,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['senha'])) {
         print_r($usuario);
 
     } catch (PDOException $e) {
-        echo 'Erro: ' . $e->getCode() . ' Mensagem: ' . $e->getMessage();
+        echo "Erro:   $e->getCode()   Mensagem:   $e->getMessage()";
         //registrar o erro de alguma forma.
     }
 }
