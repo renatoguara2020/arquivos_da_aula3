@@ -23,11 +23,13 @@ if(!empty($_POST['usuario']) && !empty($_POST['senha']) && !empty($_POST['email'
         $query = "select * from tb_usuarios where ";
         $query .= " email = :usuario ";
         $query .= " AND senha = :senha ";
+        $query .=" AND email = :email ";
 
         $stmt = $conexao->prepare($query); //ele não executa diretamente a query, ele aguarda seu ok para executar
         
         $stmt->bindValue(':usuario', $_POST['usuario']);
         $stmt->bindValue(':senha', $_POST['senha']);
+        $stmt->bindValue(':email', $_POST['email']);
 
         $stmt->execute(); //executa a query depois do bindValue
 
