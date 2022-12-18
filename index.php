@@ -7,6 +7,9 @@ if(!empty($_POST['usuario']) && !empty($_POST['senha']) && !empty($_POST['email'
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
+
+    print_r($_POST);
+    
     $dsn = 'mysql:host=localhost;dbname=php_com_pdo';
     $user = 'root';
     $password = '';
