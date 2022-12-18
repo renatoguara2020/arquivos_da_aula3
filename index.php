@@ -4,14 +4,14 @@ if(isset($_POST['btn-enviar']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
 if(!empty($_POST['usuario']) && !empty($_POST['senha'])) {
     $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_SPECIAL_CHARS);
-    $senha = filter_input(INPUT_POST, 'senha',FILTER_SANITIZE_SPECIAL_CHARS);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
     $dsn = 'mysql:host=localhost;dbname=php_com_pdo';
     $user = 'root';
     $password = '';
 
     try {
-        $conexao = new PDO($dsn, $user, $senha);
+        $conexao = new PDO($dsn, $user, $password);
         // $query = "insert into tb_usuarios(nome, email, senha)values('Jorge Sant Ana', 'jorge@teste.com.br', '1234')";
         //$conexao->query($query);
         // $query = "insert into tb_usuarios(nome, email, senha)values('Jamilton Damasceno', 'jamilton@teste.com.br', '1234')";
